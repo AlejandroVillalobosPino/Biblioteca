@@ -1,0 +1,100 @@
+### Variables de configuración
+@baseUrl = http://localhost:3000/api
+
+### 1. LOGIN (Obtener el Token)
+# Pulsa el botón Play verde aquí abajo
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "lector@biblioteca.com",
+  "password": "123456"
+}
+
+> {%
+    // Esto guarda el token automáticamente para las siguientes peticiones
+    client.global.set("auth_token", response.body.token);
+%}
+
+### 2. MI PERFIL (Prueba de ruta protegida)
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{auth_token}}
+
+### 3. LISTAR TODOS LOS LIBROS
+GET {{baseUrl}}/books
+
+### VER MIS PRÉSTAMOS (Para saber el ID)
+GET {{baseUrl}}/loans
+Authorization: Bearer {{auth_token}}
+
+### 4. SOLICITAR UN PRÉSTAMO
+# Nota: Asegúrate de que el id del libro exista en tu base de datos (mira el paso 3)
+POST {{baseUrl}}/loans
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "bookId": 1
+}
+
+### 5. DEVOLVER UN LIBRO
+# Nota: Cambia el "1" por el ID del préstamo (loan) que quieras devolver
+PUT {{baseUrl}}/loans/2/return
+Authorization: Bearer {{auth_token}}
+
+### 6. CREAR RESEÑA (Éxito: porque ya devolviste el libro 1)
+POST {{baseUrl}}/books/1/reviews
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+### 7. PROBAR ERROR: Reseña duplicada (Debe fallar con 400)
+# El sistema de errores de Prisma debe decirte que ya existe.
+POST {{baseUrl}}/books/1/reviews
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+### 8. PROBAR ERROR: Rating inválido (Debe fallar con 400)
+POST {{baseUrl}}/books/1/reviews
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "rating": 10,
+  "comment": "Rating fuera de rango"
+}
+
+### 9. LOGIN COMO ADMIN (Para probar Borrar/Actualizar)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@biblioteca.com",
+  "password": "123456"
+}
+
+> {% client.global.set("admin_token", response.body.token); %}
+
+### 10. ACTUALIZAR LIBRO (Éxito: Solo Admin)
+PUT {{baseUrl}}/books/1
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+  "title": "Cien años de soledad - Edición Ilustrada",
+  "available": 10
+}
+
+### 11. BORRAR LIBRO (Éxito: Solo Admin)
+# Ojo: Prueba con el libro ID 2 si no quieres borrar el 1
+DELETE {{baseUrl}}/books/2
+Authorization: Bearer {{admin_token}}
