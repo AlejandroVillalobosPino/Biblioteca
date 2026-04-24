@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "bookId": 1,
+    "loanDate": "2026-04-06T13:56:47.881Z",
+    "dueDate": "2026-04-20T13:56:47.875Z",
+    "returnDate": "2026-04-06T13:57:02.784Z",
+    "status": "RETURNED",
+    "book": {
+      "id": 1,
+      "isbn": "978-84-376-0494-7",
+      "title": "Cien años de soledad",
+      "author": "Gabriel García Márquez",
+      "genre": "Realismo mágico",
+      "description": null,
+      "publishedYear": 1967,
+      "copies": 5,
+      "available": 4
+    }
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "bookId": 1,
+    "loanDate": "2026-04-06T14:15:10.485Z",
+    "dueDate": "2026-04-20T14:15:10.483Z",
+    "returnDate": null,
+    "status": "ACTIVE",
+    "book": {
+      "id": 1,
+      "isbn": "978-84-376-0494-7",
+      "title": "Cien años de soledad",
+      "author": "Gabriel García Márquez",
+      "genre": "Realismo mágico",
+      "description": null,
+      "publishedYear": 1967,
+      "copies": 5,
+      "available": 4
+    }
+  }
+]

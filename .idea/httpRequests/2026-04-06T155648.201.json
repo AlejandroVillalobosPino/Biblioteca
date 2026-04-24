@@ -1,0 +1,12 @@
+{
+  "message": "Préstamo realizado con éxito",
+  "loan": {
+    "id": 1,
+    "userId": 2,
+    "bookId": 1,
+    "loanDate": "2026-04-06T13:56:47.881Z",
+    "dueDate": "2026-04-20T13:56:47.875Z",
+    "returnDate": null,
+    "status": "ACTIVE"
+  }
+}

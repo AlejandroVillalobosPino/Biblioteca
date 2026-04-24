@@ -1,0 +1,557 @@
+GET http://localhost:3000/api/books
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T230925.200.json
+
+###
+
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU1MDk3NTksImV4cCI6MTc3NTU5NjE1OX0.loG7GXMc_fujeZcN2yH4rIGDtVCEsotGZhhyxem8giY
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T230922.200.json
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 62
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "lector@biblioteca.com",
+  "password": "123456"
+}
+
+<> 2026-04-06T230919.200.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T164007.400.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T164004.201.json
+
+###
+
+DELETE http://localhost:3000/api/books/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1NDg2MTk3LCJleHAiOjE3NzU1NzI1OTd9.jsjRSSeS1ls-6U2RPlwYpvIObmxCRfFzhDK3jA07_ow
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+PUT http://localhost:3000/api/books/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1NDg2MTk3LCJleHAiOjE3NzU1NzI1OTd9.jsjRSSeS1ls-6U2RPlwYpvIObmxCRfFzhDK3jA07_ow
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Cien años de soledad - Edición Ilustrada",
+  "available": 10
+}
+
+<> 2026-04-06T163742.200.json
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 61
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "admin@biblioteca.com",
+  "password": "123456"
+}
+
+<> 2026-04-06T163637.200.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 56
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 10,
+  "comment": "Rating fuera de rango"
+}
+
+<> 2026-04-06T163633.400.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 56
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 10,
+  "comment": "Rating fuera de rango"
+}
+
+<> 2026-04-06T163624.400.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T163622.500.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T163611.500.json
+
+###
+
+PUT http://localhost:3000/api/loans/2/return
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-04-06T163550.200.json
+
+###
+
+POST http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+Content-Type: application/json
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookId": 1
+}
+
+<> 2026-04-06T163006.400.json
+
+###
+
+GET http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T162935.200.json
+
+###
+
+GET http://localhost:3000/api/books
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T162931.200.json
+
+###
+
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODU3NjQsImV4cCI6MTc3NTU3MjE2NH0.HHvFwJCwDBp0IF2r1qeWfDQL7WvBiiYjpOWHYQjXBJw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T162929.200.json
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 62
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "lector@biblioteca.com",
+  "password": "123456"
+}
+
+<> 2026-04-06T162924.200.json
+
+###
+
+PUT http://localhost:3000/api/loans/1/return
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-04-06T162234.404.json
+
+###
+
+POST http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+Content-Type: application/json
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookId": 1
+}
+
+<> 2026-04-06T162050.400.json
+
+###
+
+POST http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+Content-Type: application/json
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookId": 1
+}
+
+<> 2026-04-06T161634.400.json
+
+###
+
+PUT http://localhost:3000/api/loans/1/return
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-04-06T161626.404.json
+
+###
+
+POST http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+Content-Type: application/json
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookId": 1
+}
+
+<> 2026-04-06T161624.400.json
+
+###
+
+PUT http://localhost:3000/api/loans/1/return
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-04-06T161513.404.json
+
+###
+
+POST http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+Content-Type: application/json
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookId": 1
+}
+
+<> 2026-04-06T161510.201.json
+
+###
+
+GET http://localhost:3000/api/books
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T161507.200.json
+
+###
+
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODQ5MDIsImV4cCI6MTc3NTU3MTMwMn0.kmCmK5CB1stVwFGAmCJHyQ2oDyJoeHQLXS2ZSXtn6aw
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T161505.200.json
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 62
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "lector@biblioteca.com",
+  "password": "123456"
+}
+
+<> 2026-04-06T161502.200.json
+
+###
+
+DELETE http://localhost:3000/api/books/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1NDg0NTA5LCJleHAiOjE3NzU1NzA5MDl9.t8_b8clBnulZFek4T2Jq4GI2gdckFQFaX1MB0RnR0Ec
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-04-06T160840.404.html
+
+###
+
+PUT http://localhost:3000/api/books/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1NDg0NTA5LCJleHAiOjE3NzU1NzA5MDl9.t8_b8clBnulZFek4T2Jq4GI2gdckFQFaX1MB0RnR0Ec
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Cien años de soledad - Edición Ilustrada",
+  "available": 10
+}
+
+<> 2026-04-06T160834.404.html
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 61
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "admin@biblioteca.com",
+  "password": "123456"
+}
+
+<> 2026-04-06T160829.200.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+Content-Type: application/json
+Content-Length: 56
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 10,
+  "comment": "Rating fuera de rango"
+}
+
+<> 2026-04-06T160807.400.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T160755.500.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T160747.500.json
+
+###
+
+POST http://localhost:3000/api/books/1/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+Content-Type: application/json
+Content-Length: 64
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "rating": 5,
+  "comment": "Una obra maestra, me encantó."
+}
+
+<> 2026-04-06T160725.500.json
+
+###
+
+PUT http://localhost:3000/api/loans/1/return
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-04-06T155703.200.json
+
+###
+
+POST http://localhost:3000/api/loans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+Content-Type: application/json
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookId": 1
+}
+
+<> 2026-04-06T155648.201.json
+
+###
+
+GET http://localhost:3000/api/books
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T155645.200.json
+
+###
+
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzU0ODM3ODQsImV4cCI6MTc3NTU3MDE4NH0.hedDE6_vf2K45J7oIivoxFf2zN6slpRbLXDTztsZjos
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T155635.200.json
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 62
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "lector@biblioteca.com",
+  "password": "123456"
+}
+
+<> 2026-04-06T155625.200.json
+
+###
+

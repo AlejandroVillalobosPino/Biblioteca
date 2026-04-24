@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "isbn": "978-84-376-0494-7",
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "genre": "Realismo mágico",
+    "description": null,
+    "publishedYear": 1967,
+    "copies": 5,
+    "available": 5
+  },
+  {
+    "id": 2,
+    "isbn": "978-84-206-7420-9",
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Ciencia Ficción",
+    "description": null,
+    "publishedYear": 1949,
+    "copies": 3,
+    "available": 3
+  }
+]

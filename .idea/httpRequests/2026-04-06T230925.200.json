@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "isbn": "978-84-376-0494-7",
+    "title": "Cien años de soledad - Edición Ilustrada",
+    "author": "Gabriel García Márquez",
+    "genre": "Realismo mágico",
+    "description": null,
+    "publishedYear": 1967,
+    "copies": 5,
+    "available": 10
+  }
+]
