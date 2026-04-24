@@ -6,21 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="566890e9-0c3c-4a6e-929d-23a97e59679e" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/prisma/seed.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/config/prisma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/controllers/auth.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/controllers/books.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/controllers/loans.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/controllers/reviews.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/middleware/auth.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/middleware/error.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/routes/auth.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/routes/books.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/routes/loans.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/src/routes/reviews.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Biblioteca/test/api.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/call-bind-apply-helpers/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/call-bound/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dunder-proto/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/es-define-property/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/es-errors/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/es-object-atoms/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/function-bind/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/function-bind/.github/SECURITY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/get-intrinsic/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/get-proto/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/gopd/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/has-symbols/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hasown/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/math-intrinsics/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/object-inspect/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/qs/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/qs/.github/SECURITY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/qs/.github/THREAT_MODEL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/side-channel-list/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/side-channel-map/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/side-channel-weakmap/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/side-channel/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/undefsafe/.github/workflows/release.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PodcastHub/jest.config.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PodcastHub/src/app.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PodcastHub/src/config/db.js" afterDir="false" />
@@ -45,7 +57,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/WebII.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,39 +91,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.api | 1. LOGIN (Obtener el Token).executor": "Run",
-    "HTTP Request.api | 10. ACTUALIZAR LIBRO (Éxito: Solo Admin).executor": "Run",
-    "HTTP Request.api | 11. BORRAR LIBRO (Éxito: Solo Admin).executor": "Run",
-    "HTTP Request.api | 2. MI PERFIL (Prueba de ruta protegida).executor": "Run",
-    "HTTP Request.api | 3. LISTAR TODOS LOS LIBROS.executor": "Run",
-    "HTTP Request.api | 4. SOLICITAR UN PRÉSTAMO.executor": "Run",
-    "HTTP Request.api | 5. DEVOLVER UN LIBRO.executor": "Run",
-    "HTTP Request.api | 6. CREAR RESEÑA (Éxito: porque ya devolviste el libro 1).executor": "Run",
-    "HTTP Request.api | 7. PROBAR ERROR: Reseña duplicada (Debe fallar con 400).executor": "Run",
-    "HTTP Request.api | 8. PROBAR ERROR: Rating inválido (Debe fallar con 400).executor": "Run",
-    "HTTP Request.api | 9. LOGIN COMO ADMIN (Para probar Borrar/Actualizar).executor": "Run",
-    "HTTP Request.api | VER MIS PRÉSTAMOS (Para saber el ID).executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/alexv/Documents/UTAD/WebII/T11",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.api | 1. LOGIN (Obtener el Token).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 10. ACTUALIZAR LIBRO (Éxito: Solo Admin).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 11. BORRAR LIBRO (Éxito: Solo Admin).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 2. MI PERFIL (Prueba de ruta protegida).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 3. LISTAR TODOS LOS LIBROS.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 4. SOLICITAR UN PRÉSTAMO.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 5. DEVOLVER UN LIBRO.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 6. CREAR RESEÑA (Éxito: porque ya devolviste el libro 1).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 7. PROBAR ERROR: Reseña duplicada (Debe fallar con 400).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 8. PROBAR ERROR: Rating inválido (Debe fallar con 400).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | 9. LOGIN COMO ADMIN (Para probar Borrar/Actualizar).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | VER MIS PRÉSTAMOS (Para saber el ID).executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexv/Documents/UTAD/WebII/T11&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
       <map>

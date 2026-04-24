@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const prisma = require('./config/prisma');
 
 const authRoutes = require('./routes/auth.routes');
 const booksRoutes = require('./routes/books.routes');
@@ -24,6 +25,28 @@ app.use('/api/books', booksRoutes);
 app.use('/api/loans', loansRoutes);
 app.use('/api/books', reviewsRoutes);
 app.use(errorHandler);
+
+// Endpoint de monitorización (Health Check)
+app.get('/api/health', async (req, res) => {
+    const healthcheck = {
+        status: 'ok',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        environment: process.env.NODE_ENV || 'development'
+    };
+
+    try {
+        // Comprobamos que la BD responde
+        await prisma.$queryRaw`SELECT 1`;
+        healthcheck.database = 'connected';
+    } catch (error) {
+        healthcheck.status = 'error';
+        healthcheck.database = 'disconnected';
+        return res.status(503).json(healthcheck);
+    }
+
+    res.json(healthcheck);
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
