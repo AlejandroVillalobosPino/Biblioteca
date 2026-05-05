@@ -1,54 +1,59 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const prisma = require('./config/prisma');
+import express from 'express';
+import { createServer } from 'node:http';
+import { Server } from 'socket.io';
+import jwt from 'jsonwebtoken';
 
-const authRoutes = require('./routes/auth.routes');
-const booksRoutes = require('./routes/books.routes');
-const loansRoutes = require('./routes/loans.routes');
-const reviewsRoutes = require('./routes/reviews.routes');
-const errorHandler = require('./middleware/error.middleware');
+import indexRoutes from './routes/index.js';
+import { errorHandler } from './middleware/error-handler.js';
 
 const app = express();
+const httpServer = createServer(app); // Envolvemos Express en un servidor HTTP[cite: 4]
 
-app.use(cors());
-app.use(express.json());
+const io = new Server(httpServer, {
+    cors: { origin: '*' }
+});
 
-console.log("DEPURACIÓN: ¿Cómo llegan las rutas?");
-console.log("Auth:", typeof authRoutes);
-console.log("Books:", typeof booksRoutes);
-console.log("Loans:", typeof loansRoutes);
-
-// Rutas
-app.use('/api/auth', authRoutes);
-app.use('/api/books', booksRoutes);
-app.use('/api/loans', loansRoutes);
-app.use('/api/books', reviewsRoutes);
-app.use(errorHandler);
-
-// Endpoint de monitorización (Health Check)
-app.get('/api/health', async (req, res) => {
-    const healthcheck = {
-        status: 'ok',
-        timestamp: new Date().toISOString(),
-        uptime: process.uptime(),
-        environment: process.env.NODE_ENV || 'development'
-    };
-
+// Middleware de autenticación para WebSockets
+io.use((socket, next) => {
     try {
-        // Comprobamos que la BD responde
-        await prisma.$queryRaw`SELECT 1`;
-        healthcheck.database = 'connected';
+        const token = socket.handshake.auth.token || socket.handshake.headers.authorization?.split(' ')[1];
+        if (!token) return next(new Error('Autenticación denegada: Token no proporcionado'));
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        socket.user = decoded; // Guardamos el usuario en el socket[cite: 4]
+        next();
     } catch (error) {
-        healthcheck.status = 'error';
-        healthcheck.database = 'disconnected';
-        return res.status(503).json(healthcheck);
+        next(new Error('Token inválido o expirado'));
+    }
+});
+
+io.on('connection', (socket) => {
+    console.log(`🔌 Cliente conectado por WebSocket: ${socket.user.email}`);
+
+    // Los eventos solo deben emitirse a los usuarios de la misma compañía
+    const companyId = socket.user.companyID || socket.user.company;
+    if (companyId) {
+        socket.join(companyId.toString()); // Metemos al usuario en la "sala" de su empresa
+        console.log(`Usuario unido a la sala (Company): ${companyId}`);
     }
 
-    res.json(healthcheck);
+    socket.on('disconnect', () => {
+        console.log('Cliente desconectado');
+    });
 });
 
+// Hacer 'io' accesible desde los controladores
+app.set('io', io);
+
+app.use(express.json());
+
+app.use('/api', indexRoutes);
+
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
+httpServer.listen(PORT, () => {
+    console.log(`Servidor HTTP y WebSockets corriendo en puerto ${PORT}`);
 });
+
+export default app;
