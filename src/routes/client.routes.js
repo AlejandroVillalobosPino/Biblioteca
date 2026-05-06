@@ -17,6 +17,32 @@ router.get('/archived', getArchivedClients);
 router.patch('/:id/restore', restoreClient);
 
 router.post('/', validate(createClientValidator), createClient);
+/**
+ * @openapi
+ * /api/client:
+ *   get:
+ *     tags:
+ *       - Clientes
+ *     summary: Listar todos los clientes
+ *     description: Obtiene una lista paginada de todos los clientes de la compañía del usuario autenticado.
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *         description: Número de página
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *         description: Cantidad de resultados por página
+ *     responses:
+ *       200:
+ *         description: Lista de clientes obtenida con éxito
+ *       401:
+ *         description: No autorizado (Token faltante o inválido)
+ */
+router.get('/', getClients);
 router.get('/', getClients);
 router.get('/:id', getClientById);
 router.put('/:id', validate(updateClientValidator), updateClient);

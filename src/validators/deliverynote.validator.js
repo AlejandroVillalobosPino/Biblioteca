@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const createDeliveryNoteValidator = z.object({
+const baseDeliveryNoteSchema = z.object({
     project: z.string({ required_error: "El ID del proyecto es obligatorio" })
         .length(24, "El ID del proyecto debe ser un ObjectId válido"),
     format: z.enum(['material', 'hours'], { required_error: "El formato debe ser 'material' o 'hours'" }),
@@ -10,7 +10,7 @@ export const createDeliveryNoteValidator = z.object({
         .datetime({ message: "Formato de fecha inválido (usa ISO 8601)" })
         .or(z.date()),
 
-    // Opcionales que luego refine() comprobará
+    // Opcionales
     material: z.string().optional(),
     quantity: z.number().positive("La cantidad debe ser mayor a 0").optional(),
     unit: z.string().optional(),
@@ -22,8 +22,9 @@ export const createDeliveryNoteValidator = z.object({
             hours: z.number().positive("Las horas deben ser mayores a 0")
         })
     ).optional()
-}).superRefine((data, ctx) => {
-    // Lógica condicional compleja en Zod
+});
+
+const deliveryNoteRefinement = (data, ctx) => {
     if (data.format === 'material') {
         if (!data.material || data.quantity === undefined || !data.unit) {
             ctx.addIssue({
@@ -41,6 +42,8 @@ export const createDeliveryNoteValidator = z.object({
             });
         }
     }
-});
+};
 
-export const updateDeliveryNoteValidator = createDeliveryNoteValidator.partial();
+export const createDeliveryNoteValidator = baseDeliveryNoteSchema.superRefine(deliveryNoteRefinement);
+
+export const updateDeliveryNoteValidator = baseDeliveryNoteSchema.partial().superRefine(deliveryNoteRefinement);
