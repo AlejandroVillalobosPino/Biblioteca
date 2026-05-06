@@ -1,22 +1,20 @@
 import { Router } from 'express';
-import clientRoutes from './client.routes.js'; //[cite: 8]
-import projectRoutes from './project.routes.js'; //[cite: 8]
-import deliveryNoteRoutes from './deliverynote.routes.js'; //[cite: 8]
-import mongoose from 'mongoose';
+// Importamos tus rutas de la biblioteca (verifica que los nombres de archivo sean estos)
+import bookRoutes from './books.routes.js';
+import loanRoutes from './loans.routes.js';
+import authRoutes from './auth.routes.js';
 
 const router = Router();
 
-// Módulos de la Práctica Final[cite: 8]
-router.use('/client', clientRoutes);
-router.use('/project', projectRoutes);
-router.use('/deliverynote', deliveryNoteRoutes);
+router.use('/books', bookRoutes);
+router.use('/loans', loanRoutes);
+router.use('/auth', authRoutes);
 
 router.get('/health', async (req, res) => {
     const healthcheck = {
         status: 'ok',
         uptime: process.uptime(),
-        timestamp: new Date().toISOString(),
-        db: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+        timestamp: new Date().toISOString()
     };
 
     try {

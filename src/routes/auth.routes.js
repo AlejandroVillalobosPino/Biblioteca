@@ -1,11 +1,12 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
 
-// Importamos las funciones del controlador
-const { register, login, getMe } = require('../controllers/auth.controller');
+// Importamos las funciones del controlador (¡recuerda el .js al final!)
+import { register, login, getMe } from '../controllers/auth.controller.js';
 
 // Importamos el middleware para proteger la ruta /me
-const { authenticate } = require('../middleware/auth.middleware');
+import { authenticate } from '../middleware/auth.middleware.js';
+
+const router = Router();
 
 /**
  * Rutas Públicas
@@ -25,5 +26,5 @@ router.post('/login', login);
 // Usamos "authenticate" para validar el token antes de dejar pasar la petición
 router.get('/me', authenticate, getMe);
 
-// IMPORTANTE: Exportamos el router directamente (sin llaves {})
-module.exports = router;
+// Exportamos el router con el formato moderno
+export default router;

@@ -1,15 +1,13 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+import { requestLoan, returnBook, getMyLoans } from '../controllers/loans.controller.js';
+import { authenticate } from '../middleware/auth.middleware.js';
 
-// IMPORTANTE: Tienes que añadir getMyLoans aquí arriba
-const { requestLoan, returnBook, getMyLoans } = require('../controllers/loans.controller');
-
-const { authenticate } = require('../middleware/auth.middleware');
+const router = Router();
 
 // Rutas
 router.use(authenticate); // Todas requieren login
-router.get('/', getMyLoans); // Esta es la que acabamos de crear
+router.get('/', getMyLoans);
 router.post('/', requestLoan);
 router.put('/:id/return', returnBook);
 
-module.exports = router;
+export default router;

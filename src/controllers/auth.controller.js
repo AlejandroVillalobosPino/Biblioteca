@@ -1,9 +1,9 @@
-const prisma = require('../config/prisma');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+import prisma from '../config/prisma.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 // Función para REGISTRAR usuario
-const register = async (req, res) => {
+export const register = async (req, res) => {
     const { email, name, password } = req.body;
     try {
         const salt = await bcrypt.genSalt(10);
@@ -19,7 +19,7 @@ const register = async (req, res) => {
 };
 
 // Función para LOGIN
-const login = async (req, res) => {
+export const login = async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await prisma.user.findUnique({ where: { email } });
@@ -30,7 +30,7 @@ const login = async (req, res) => {
 
         const token = jwt.sign(
             { id: user.id, role: user.role },
-            process.env.JWT_SECRET,
+            process.env.JWT_SECRET || 'mi_secreto_por_defecto',
             { expiresIn: '24h' }
         );
         res.json({ token });
@@ -40,7 +40,7 @@ const login = async (req, res) => {
 };
 
 // Función para PERFIL
-const getMe = async (req, res) => {
+export const getMe = async (req, res) => {
     try {
         const user = await prisma.user.findUnique({
             where: { id: req.user.id },
@@ -51,6 +51,3 @@ const getMe = async (req, res) => {
         res.status(500).json({ error: 'Error al obtener perfil' });
     }
 };
-
-// --- ¡ESTO ES LO MÁS IMPORTANTE! ---
-module.exports = { register, login, getMe };

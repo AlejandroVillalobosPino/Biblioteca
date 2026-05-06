@@ -1,8 +1,6 @@
-// src/middleware/auth.middleware.js
 import jwt from 'jsonwebtoken';
-import { AppError } from '../utils/AppError.js';
 
-export const protect = (req, res, next) => {
+export const authenticate = (req, res, next) => {
     try {
         let token;
 
@@ -11,15 +9,27 @@ export const protect = (req, res, next) => {
         }
 
         if (!token) {
-            return next(AppError.unauthorized('No has iniciado sesión. Por favor, envía un token.'));
+            return res.status(401).json({ message: 'No has iniciado sesión. Por favor, envía un token.' });
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secreto_de_desarrollo_por_defecto');
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'mi_secreto_por_defecto');
 
         req.user = decoded;
 
         next();
     } catch (error) {
-        return next(AppError.unauthorized('Token inválido o ha expirado.'));
+        return res.status(401).json({ message: 'Token inválido o ha expirado.' });
     }
+};
+
+export const authorize = (roles = []) => {
+    return (req, res, next) => {
+        // Verificamos si el usuario existe y si su rol está dentro de los permitidos
+        if (!req.user || !roles.includes(req.user.role)) {
+            return res.status(403).json({
+                error: 'Acceso denegado. No tienes permisos para realizar esta acción.'
+            });
+        }
+        next();
+    };
 };

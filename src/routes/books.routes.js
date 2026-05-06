@@ -1,16 +1,8 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+import { getAllBooks, getBookById, createBook, updateBook, deleteBook } from '../controllers/books.controller.js';
+import { authenticate, authorize } from '../middleware/auth.middleware.js';
 
-// FIJATE AQUÍ: Tienes que añadir updateBook y deleteBook dentro de las llaves
-const {
-    getAllBooks,
-    getBookById,
-    createBook,
-    updateBook,
-    deleteBook
-} = require('../controllers/books.controller');
-
-const { authenticate, authorize } = require('../middleware/auth.middleware');
+const router = Router();
 
 router.get('/', getAllBooks);
 router.get('/:id', getBookById);
@@ -19,4 +11,4 @@ router.post('/', authenticate, authorize(['LIBRARIAN', 'ADMIN']), createBook);
 router.put('/:id', authenticate, authorize(['LIBRARIAN', 'ADMIN']), updateBook);
 router.delete('/:id', authenticate, authorize(['ADMIN']), deleteBook);
 
-module.exports = router;
+export default router;
